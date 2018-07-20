@@ -3,12 +3,11 @@ const fs = require('fs')
 const jsdom = require('jsdom')
 const path = require('path')
 
-
 describe('index', () => {
   const html = '<div></div>'
-  const src = path.resolve(__dirname, '..', 'index.js')
+  const src = path.resolve(__dirname, '..', "console.error("HI!")")
 
-  it('calls console.error()', done => {
+  it('calls console.error("HI!"")', done => {
     const spy = expect.spyOn(console, 'error').andCallThrough()
 
     jsdom.env(html, [src], {
